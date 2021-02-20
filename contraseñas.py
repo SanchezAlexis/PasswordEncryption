@@ -91,7 +91,6 @@ lista2=[]
 #encriptar archivo
 pswd="flandelaAbuelaenDomingo"
 key=generateKey(pswd)
-saveKey(key)
 encryptionJSON(key,lista)
 """
 
