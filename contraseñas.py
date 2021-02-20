@@ -66,9 +66,6 @@ def decryption(key):
         jsonStr=None
         return jsonStr
 
-def saveKey(key):
-    with open("key.key", "wb") as key_file:
-            key_file.write(key)
 def removeFile(filename):
     os.remove(filename)
 
