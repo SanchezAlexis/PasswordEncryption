@@ -22,23 +22,11 @@ def generateKey(pswd):
     key = base64.urlsafe_b64encode(kdf.derive(password))  
     return key
 
-def encryption(key, filename):
-    input_file = filename+".json"
-    output_file = filename+'.encrypted'
-    
-    with open(input_file, 'rb') as f:
-        data = f.read()  
-    
-    fernet = Fernet(key)
-    encrypted = fernet.encrypt(data)
-    
-    with open(output_file, 'wb') as f:
-        f.write(encrypted)  
 
 #El metodo recibe una lista de diccionarios o JSONs
 #Si esta vacía, crea el archivo JSON
 #Si no esta vacia, solo cifra 
-def encryptionJSON(key, lista):
+def encryption(key, lista):
     output_file = 'db.encrypted'
     input_file = "db.json"
     
@@ -58,7 +46,7 @@ def encryptionJSON(key, lista):
             f.write(encrypted)  
         removeFile("db.json")
     
-def decryptionJSON(key):
+def decryption(key):
     input_file = 'db.encrypted'
     output_file = "db.json"
     
@@ -77,30 +65,6 @@ def decryptionJSON(key):
     except FileNotFoundError:
         jsonStr=None
         return jsonStr
-
-def decryption(key, filename):
-    input_file = filename+'.encrypted'
-    output_file = filename+".json"
-    try:
-        with open(input_file, 'rb') as f:
-            data = f.read()  
-            
-        fernet = Fernet(key)
-        try:
-            decrypted = fernet.decrypt(data)
-            """
-            s=str(decrypted,'utf-8')
-            data = StringIO(s) 
-            df=pd.read_csv(data)
-            return df
-            """
-            with open(output_file, 'wb') as f:
-                f.write(decrypted)  # Write the decrypted bytes to the output file
-        
-        except InvalidToken:
-            print("Invalid Key - Unsuccessfully decrypted")
-    except FileNotFoundError:
-         return 0
 
 def saveKey(key):
     with open("key.key", "wb") as key_file:
