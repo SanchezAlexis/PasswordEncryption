@@ -2,6 +2,8 @@
 
 La protección de contraseñas es una de las prácticas mas importantes en el campo de la seguridad informática. Con el objetivo de proteger la información personal de los usuarios, las contraseñas deben estar cifradas en todo momento. El cifrado es un procedimiento criptográfico que oculta la información de un mensaje mediante el uso de un algoritmo. Existen distintos tipos de cifrado: simétrico y asimétrico. El cifrado simétrico usa la misma llave para el encriptado y desencriptado de un archivo. El cifrado asimétrico usa distintas llaves para realizar el mismo proceso. El código presentado en este repositorio utiliza cifrado simétrico mediante una llave pública. Estos scripts muestran como encriptar un archivo que contiene las contraseñas de un usuario. Este código es parte del *backend* de una aplicación que se encarga de mantener las contraseñas seguras y cifradas. 
 
+![img](https://user-images.githubusercontent.com/54086948/108642017-6bdd0600-7468-11eb-909c-4aa59c674653.png)
+
 
 ## Procedimiento
 
