@@ -18,7 +18,6 @@ La biblioteca *cryptography* permitirá hacer la generación de una llave y el e
 
 El método generateKey recibe como único parámetro la contraseña maestra, dada por el usuario. Esta contraseña se decodifica a bits para poder manejarla. El hasheo de contraseñas consiste en procesar texto mediante una función que regresa una cadena en base hexadecimal. El recurso PBKDF2HMAC creará un objeto de hasheo usando una sal (elemento que da mayor seguridad a la llave) y el algoritmo SHA256. La llave se crea usando el objeto de hasheo y la contraseña. Finalmente, se decodifican los bits y se obtiene de regreso la llave final. 
 
-![im3](https://user-images.githubusercontent.com/54086948/108642351-418c4800-746a-11eb-80eb-298eb45d252d.png)
 
 ### Encriptado
 
